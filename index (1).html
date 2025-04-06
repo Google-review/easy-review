@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Easy Review PRO</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4285F4;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #222;
+      text-align: center;
+    }
+
+    .price-box {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #d32f2f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #999;
+      background: #fff;
+      margin-top: 40px;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    window.onload = function() {
+      showSection('inicio');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="producto.jpg" alt="Logo Easy Review" class="logo">
+    <nav>
+      <a href="#" onclick="showSection('inicio')">Inicio</a>
+      <a href="#" onclick="showSection('producto')">Producto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="content active">
+    <h1>Easy Review PRO</h1>
+    <p>La pegatina <strong>indestructible</strong> que genera reseñas sin esfuerzo.</p>
+    <ul>
+      <li>💧 Resistente al agua, rayones y sol</li>
+      <li>💪 Adhesivo industrial</li>
+      <li>📱 Funciona con NFC</li>
+    </ul>
+    <p style="text-align:center; font-style:italic;">"Sin fallos. Sin excusas. Solo reseñas."</p>
+  </section>
+
+  <section id="producto" class="content">
+    <h2>Conoce nuestro producto</h2>
+    <img src="producto.jpg" alt="Foto del producto" class="product-image">
+    <div class="price-box">
+      <p class="price">1 unidad → 6€</p>
+      <p class="price">2 unidades → 10€</p>
+    </div>
+  </section>
+
+  <footer>
+    Easy Review PRO · Web minimalista publicada con GitHub Pages
+  </footer>
+</body>
+</html>
